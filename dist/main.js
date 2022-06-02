@@ -116,7 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\nconst test = document.createElement('p');\ntest.textContent = \"hello, world\"\ntest.classList.add('test')\ndocument.body.appendChild(test)\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _task_class__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./task-class */ \"./src/task-class.js\");\n\n\n\n\nconst test = document.createElement('p');\ntest.textContent = \"hello, world\"\ntest.classList.add('test')\ndocument.body.appendChild(test)\n\n\nconst firstTask = new _task_class__WEBPACK_IMPORTED_MODULE_1__.task ('aaa', 'aaa', '2', 'a', 'project; m')\nconsole.log(firstTask)\n\nfirstTask.markComplete();\nfirstTask.toProject('Project: L')\n\nconsole.log(firstTask)\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/task-class.js":
+/*!***************************!*\
+  !*** ./src/task-class.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"task\": () => (/* binding */ task)\n/* harmony export */ });\nclass task {\n    constructor(title, description, dueDate, priority, project) {\n        this.title = title;\n        this.description = description;\n        this.dueDate = dueDate;\n        this.priority = priority;\n        this.project = project;\n        this.completed = \"no\";\n    }\n\n    markComplete() {\n        if (this.completed === \"no\") {\n            return this.completed = \"yes\";\n        }\n        if (this.completed === \"yes\") {\n            return this.completed = \"no\";\n        }\n    }\n\n    toProject(project) {\n        this.project = project;\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/task-class.js?");
 
 /***/ })
 

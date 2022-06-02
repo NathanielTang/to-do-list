@@ -1,4 +1,4 @@
-class task {
+export class task {
     constructor(title, description, dueDate, priority, project) {
         this.title = title;
         this.description = description;
@@ -6,5 +6,18 @@ class task {
         this.priority = priority;
         this.project = project;
         this.completed = "no";
+    }
+
+    markComplete() {
+        if (this.completed === "no") {
+            return this.completed = "yes";
+        }
+        if (this.completed === "yes") {
+            return this.completed = "no";
+        }
+    }
+
+    toProject(project) {
+        this.project = project;
     }
 }
