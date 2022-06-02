@@ -1,0 +1,24 @@
+What does to-do-list do?
+    -takes user input and stores in a list.
+    -the user input is the "tasks"
+        tasks require 
+            description/title, 
+            date,
+            priority?,
+            project (that it belongs to),
+            completed
+            METHODS: 
+                markComplete() {this.completed = "yes", or "no" if starts at yes}
+                toProject() change the project property to an existing project
+    -tasks can be placed into separate "projects"
+    -tasks need to belong to certain projects, with the default being the first project that's already open
+            so we can add the property "project:" to the task object/class
+            projects need to interact with DOM to show only the tasks belonging to the project
+                can use a loop that checks the "project:" property to determine if the task should show in DOM
+    default "project" page can be ALL, which shows all tasks, regardless of project.
+    
+Need a function that expands a to-do which will show its description
+Function to delete an item
+function to toggle between projects
+
+need a spot for input - - - 
