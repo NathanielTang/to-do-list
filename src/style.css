@@ -25,6 +25,8 @@ body {
   grid-row: 2/3;
   grid-column: 2/3;
   background-color: #cffafe;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -35,4 +37,22 @@ body {
 
 #logo {
     color: #ecfeff;
+}
+
+
+/* task */
+
+.task {
+    border: 1px dotted black;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 22px;
+}
+
+input {
+    background-color: red;
+    color: blue;
 }

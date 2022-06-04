@@ -9,6 +9,10 @@ What does to-do-list do?
             completed
             METHODS: 
                 markComplete() {this.completed = "yes", or "no" if starts at yes}
+                    function completedStatus {
+                        element.markComplete() //need a btn that calls this method on the correct object
+                        render
+                    }
                 toProject() change the project property to an existing project
     -tasks can be placed into separate "projects"
     -tasks need to belong to certain projects, with the default being the first project that's already open
@@ -22,3 +26,8 @@ Function to delete an item
 function to toggle between projects
 
 need a spot for input - - - 
+
+task HTML:
+    each property needs a <p> or <div> or some sort of checkbox for "completed"
+    set max widths to make sure there's no overflow for long titles or descriptions
+    
