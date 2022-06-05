@@ -76,6 +76,7 @@ export function createSidebar(array) {
   //array of the projects used to create sidebar. Add eventlistener to each div that calls on the
   // switchToProject() function.
   const sidebar = document.getElementById("sidebar-content");
+  sidebar.innerHTML = "";
   array.forEach((element) => {
     const projectDiv = document.createElement("div");
     projectDiv.textContent = element.name;

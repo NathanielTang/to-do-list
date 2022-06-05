@@ -1,3 +1,5 @@
+import {addProject} from './index.js' 
+
 export class Project {
     constructor(name) {
         this.name = name
@@ -5,16 +7,18 @@ export class Project {
 }
 
 
-export const addProjectBtn = (() => {
+const addProjectBtn = (() => {
 
 const btn = document.getElementById('addProject')
 
 btn.addEventListener('click', addProject)
 
-function addProject() {
-    console.log('hello project')
-    //dom stuff
-}
+})();
 
-})
 
+// function addProject(name) {
+//     console.log('hello project')
+//     const newProject = new Project(name);
+    
+//     //dom stuff
+// }
