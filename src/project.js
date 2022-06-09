@@ -14,7 +14,7 @@ function openPopup() {
     overlay.classList.add('active')
 }
 
-function closePopup() {
+export function closePopup() {
     popup.classList.remove('active')
     overlay.classList.remove('active')
 }
@@ -22,8 +22,11 @@ function closePopup() {
 const addProjectBtn = (() => {
 
 const btn = document.getElementById('addProject')
+const popupBtn = document.getElementById('popup-btn')
 
-btn.addEventListener('click', addProject)
+// btn.addEventListener('click', addProject)
+
+popupBtn.addEventListener('click', addProject)
 btn.addEventListener('click', openPopup)
 overlay.addEventListener('click', closePopup)
 })();

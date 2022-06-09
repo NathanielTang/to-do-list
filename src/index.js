@@ -1,7 +1,7 @@
 import "./style.css";
 import { Task } from "./task-class";
 import { render, createContent, createSidebar, taskInput } from "./DOM";
-import { Project, addProjectBtn } from "./project";
+import { Project, addProjectBtn , closePopup} from "./project";
 import { dddd } from "./input-logic";
 
 //test
@@ -48,9 +48,14 @@ function addTask(title, description, dueDate, priority, project) {
 
 export function addProject() {
   console.log("hello project");
-  const projectName = window.prompt('Enter project name', 'New Project')
-  //learn how to do popup thing from video
+
+  const projectText = document.getElementById('add-project')
+  const projectName = projectText.value;
+  projectText.value = '';
+  closePopup();
+
   if (projectName == "" || projectName == undefined) { return}
+
   const newProject = new Project(projectName);
   projectArray.push(newProject);
   //dom stuff
