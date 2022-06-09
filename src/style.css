@@ -47,11 +47,11 @@ body {
   
 }
 .project {
-  border-radius: 10%;
+  border-radius: 10px;;
   border: #155e75;
   background-color:#cffafe;
   color:#155e75;
-  padding: 0px 20px;
+  padding: 2px 20px;
   margin: 5px 0px;
   font-size: 22px;
   cursor: pointer;
@@ -74,7 +74,7 @@ body {
     color:#155e75;
     width: 50px;
     height: 50px;
-    font-size: 22px;
+    font-size: 32px;
     cursor: pointer;
 }
 
@@ -85,7 +85,9 @@ body {
 /* task */
 
 .task {
-    border: 1px dotted black;
+  background-color:#06b6d4;
+  color:#cffafe;
+  border-radius: 22px;
     margin: 10px;
     padding: 5px;
     display: flex;
@@ -94,7 +96,20 @@ body {
     font-size: 22px;
 }
 
-input {
-    background-color: red;
-    color: blue;
+.inputDiv {
+  padding: 15px;
+  background-color:#155e75;
+  color:white;
+  font-family: sans-serif;
+  display: flex;
+  gap: 50px;
+}
+
+#inputBtn {
+  color:#cffafe;
+  background-color:#06b6d4;
+
+  border-radius: 5px;
+  font-size: 18px;
+  
 }

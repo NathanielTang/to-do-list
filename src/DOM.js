@@ -1,5 +1,7 @@
 import { switchToProject } from "./index.js";
 
+const content = document.getElementById("content");
+
 export function render(array, project = "all") {
   if (project === "all") {
     createContent(array);
@@ -16,7 +18,6 @@ export function render(array, project = "all") {
 
 //content
 export function createContent(array) {
-  const content = document.getElementById("content");
   content.innerHTML = "";
 
   array.forEach((element) => {
@@ -87,3 +88,44 @@ export function createSidebar(array) {
     projectDiv.addEventListener("click", switchToProject);
   });
 }
+
+
+//task input
+    //put this at the end of the render function so that the input is at the bottom 
+
+export function taskInput() {
+    const taskInputText = document.createElement('p');
+    taskInputText.textContent = "Add a New Task";
+
+    const inputDiv = document.createElement('div');
+    inputDiv.classList.add('task', 'inputDiv');
+    content.appendChild(inputDiv);
+
+    const titleInput = document.createElement('input');
+    titleInput.setAttribute('type', "text");
+    titleInput.id = "titleInput";
+
+    const descriptionInput = document.createElement('input');
+    descriptionInput.setAttribute('type', "text");
+    descriptionInput.id = "descriptionInput";
+    
+    const dateInput = document.createElement('input');
+    dateInput.setAttribute('type', "date");
+    dateInput.id = "dateInput";
+
+    const projectInput = document.createElement('input');
+    projectInput.setAttribute('type', "text");
+    projectInput.id = "projectInput";
+
+    const inputBtn = document.createElement('button');
+    inputBtn.id = "inputBtn";
+    inputBtn.textContent = 'Add Task';
+
+    inputDiv.appendChild(taskInputText);
+    inputDiv.appendChild(titleInput);
+    inputDiv.appendChild(descriptionInput);
+    inputDiv.appendChild(dateInput);
+    inputDiv.appendChild(projectInput);
+    inputDiv.appendChild(inputBtn);
+}
+

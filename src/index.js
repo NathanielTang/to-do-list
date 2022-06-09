@@ -1,7 +1,8 @@
 import "./style.css";
 import { Task } from "./task-class";
-import { render, createContent, createSidebar } from "./DOM";
+import { render, createContent, createSidebar, taskInput } from "./DOM";
 import { Project, addProjectBtn } from "./project";
+import { dddd } from "./input-logic";
 
 //test
 const firstTask = new Task(
@@ -62,3 +63,5 @@ export function switchToProject() {
   console.log(name);
   render(taskArray, name);
 }
+
+taskInput();
