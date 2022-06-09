@@ -6,19 +6,23 @@ export class Project {
     }
 }
 
+const popup = document.getElementById('project-input-div');
+const overlay = document.getElementById('overlay');
+
+export function openPopup() {
+    popup.classList.add('active')
+}
+
 
 const addProjectBtn = (() => {
 
 const btn = document.getElementById('addProject')
 
 btn.addEventListener('click', addProject)
+btn.addEventListener('click', openPopup)
 
 })();
 
 
-// function addProject(name) {
-//     console.log('hello project')
-//     const newProject = new Project(name);
-    
-//     //dom stuff
-// }
+
+

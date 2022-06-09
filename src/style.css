@@ -44,7 +44,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  
 }
 .project {
   border-radius: 10px;;
@@ -112,4 +111,54 @@ body {
   border-radius: 5px;
   font-size: 18px;
   
+}
+
+/* input modal */
+
+.project-popup {
+  --popup-size: 44px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: solid 1px black;
+  padding: 22px;
+  border-radius: 5px;
+  z-index: 10;
+  background-color: #67e8f9;
+  color:#155e75;
+  font-size: var(--popup-size)
+}
+
+.project-popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.project-popup>button {
+  background-color: #155e75;
+  color:#ecfeff;
+  font-size: var(--popup-size)
+}
+
+.project-popup>input {
+  font-size: var(--popup-size);
+  border: none;
+  border-radius: 5px;
+}
+
+#overlay {
+  position: fixed;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  background-color: rgba(0,0,0,0.5);
 }

@@ -50,6 +50,7 @@ export function addProject() {
   console.log("hello project");
   const projectName = window.prompt('Enter project name', 'New Project')
   //learn how to do popup thing from video
+  if (projectName == "" || projectName == undefined) { return}
   const newProject = new Project(projectName);
   projectArray.push(newProject);
   //dom stuff
