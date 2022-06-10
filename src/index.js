@@ -43,7 +43,7 @@ export function addTask(title, description, dueDate, project) {
   render(taskArray);
   //add new input
   taskInput();
-  if (checkProject() != true) {
+  if (checkProjectExists(project) != true) {
       addProject(project)
   }
   
@@ -65,7 +65,7 @@ export function switchToProject() {
   render(taskArray, name);
 }
 
-function checkProject() {
+function checkProjectExists(project) {
     projectArray.forEach(Project => {
         if (Project.name === project) {
             return true
