@@ -35,14 +35,14 @@ render(taskArray);
 createSidebar(projectArray);
 
 //add task
-function addTask(title, description, dueDate, priority, project) {
+export function addTask(title, description, dueDate, project) {
   //function that uses task class to add new classes
-  const newTask = new Task(title, description, dueDate, priority, project);
+  const newTask = new Task(title, description, dueDate, project);
   taskArray.push(newTask);
 
   render(taskArray);
-  //render
   //add new input
+  taskInput();
 }
 //add project
 

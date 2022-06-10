@@ -1,4 +1,4 @@
-import { switchToProject } from "./index.js";
+import { switchToProject, addTask } from "./index.js";
 
 const content = document.getElementById("content");
 
@@ -60,6 +60,7 @@ export function createContent(array) {
     descriptionSpot.addEventListener('focusout', ()=> {
         element.description = descriptionSpot.value;
     })
+
     const appendChildArray = [];
     appendChildArray.push(
       completedSpot,
@@ -128,6 +129,9 @@ export function taskInput() {
     const inputBtn = document.createElement('button');
     inputBtn.id = "inputBtn";
     inputBtn.textContent = 'Add Task';
+    inputBtn.addEventListener('click', () => {
+        addTask(titleInput.value, descriptionInput.value, dateInput.value, projectInput.value)
+    })
 
     inputDiv.appendChild(taskInputText);
     inputDiv.appendChild(titleInput);
