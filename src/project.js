@@ -26,11 +26,19 @@ const popupBtn = document.getElementById('popup-btn')
 
 // btn.addEventListener('click', addProject)
 
-popupBtn.addEventListener('click', addProject)
+popupBtn.addEventListener('click', addProjectFromPopup)
 btn.addEventListener('click', openPopup)
 overlay.addEventListener('click', closePopup)
 })();
 
+function addProjectFromPopup() {
+const projectText = document.getElementById('add-project')
+  const projectName = projectText.value;
+  projectText.value = '';
+  closePopup();
 
+  if (projectName == "" || projectName == undefined) { return}
+    addProject(projectName);
+}
 
 

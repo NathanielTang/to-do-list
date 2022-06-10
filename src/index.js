@@ -43,20 +43,15 @@ export function addTask(title, description, dueDate, project) {
   render(taskArray);
   //add new input
   taskInput();
+  if (checkProject() != true) {
+      addProject(project)
+  }
+  
 }
 //add project
 
-export function addProject() {
-  console.log("hello project");
-
-  const projectText = document.getElementById('add-project')
-  const projectName = projectText.value;
-  projectText.value = '';
-  closePopup();
-
-  if (projectName == "" || projectName == undefined) { return}
-
-  const newProject = new Project(projectName);
+export function addProject(name) {
+  const newProject = new Project(name);
   projectArray.push(newProject);
   //dom stuff
   createSidebar(projectArray);
@@ -70,4 +65,11 @@ export function switchToProject() {
   render(taskArray, name);
 }
 
+function checkProject() {
+    projectArray.forEach(Project => {
+        if (Project.name === project) {
+            return true
+        } 
+      })
+}
 taskInput();
