@@ -43,9 +43,8 @@ export function addTask(title, description, dueDate, project) {
   render(taskArray);
   //add new input
   taskInput();
-  if (checkProjectExists(project) != true) {
-      addProject(project)
-  }
+  
+checkProjectExists(project)
   
 }
 //add project
@@ -58,18 +57,37 @@ export function addProject(name) {
 }
 
 //render
-
+function test(project) {
+    const testing = checkProjectExists(project)
+    console.log('does it exist' + testing)
+}
 export function switchToProject() {
   const name = this.textContent;
   console.log(name);
   render(taskArray, name);
 }
 
+// function checkProjectExists(project) {
+//     projectArray.forEach(Project => {
+//         console.log('a' + Project, 'b' + Project.name, 'c' + project)
+//         if (Project.name === project) {
+//             console.log('fired')
+//             return true
+//         } 
+//       })
+// }
 function checkProjectExists(project) {
+    let check = 'a';
     projectArray.forEach(Project => {
         if (Project.name === project) {
-            return true
+            check = 'b'
+            return
         } 
       })
+
+    if (check === 'a') {
+        addProject(project)
+    }
 }
+
 taskInput();
