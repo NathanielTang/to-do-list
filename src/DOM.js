@@ -33,8 +33,14 @@ export function createContent(array) {
 
     const completedSpot = document.createElement("input");
     completedSpot.setAttribute("type", "checkbox");
+    completedSpot.classList.add('checkbox')
     const titleSpot = document.createElement("p");
-    const descriptionSpot = document.createElement("p");
+    const descriptionSpot = document.createElement("textarea");
+    descriptionSpot.classList.add('description');
+    descriptionSpot.setAttribute("rows", "3");
+    descriptionSpot.setAttribute("cols", "100");
+
+
     const dueDateSpot = document.createElement("p");
     const prioritySpot = document.createElement("p");
 
@@ -51,18 +57,20 @@ export function createContent(array) {
       }
     });
 
+    descriptionSpot.addEventListener('focusout', ()=> {
+        element.description = descriptionSpot.value;
+    })
     const appendChildArray = [];
     appendChildArray.push(
       completedSpot,
       titleSpot,
-      descriptionSpot,
       dueDateSpot,
       prioritySpot
     );
     appendChildArray.forEach((element) => {
       taskDiv.appendChild(element);
     });
-
+    taskDiv.appendChild(descriptionSpot)
     titleSpot.textContent = title;
     descriptionSpot.textContent = description;
     dueDateSpot.textContent = dueDate;

@@ -22,6 +22,8 @@ What does to-do-list do?
     default "project" page can be ALL, which shows all tasks, regardless of project.
     
 Need a function that expands a to-do which will show its description
+    -on click function for the task div which opens (creates) a <p> or <div> that contains the description. OR can just hide that
+    part of the div using classes and CSS
 Function to delete an item
 function to toggle between projects
 
