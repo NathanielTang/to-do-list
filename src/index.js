@@ -2,7 +2,6 @@ import "./style.css";
 import { Task } from "./task-class";
 import { render, createContent, createSidebar, taskInput } from "./DOM";
 import { Project, addProjectBtn , closePopup} from "./project";
-import { dddd } from "./input-logic";
 
 //test
 const firstTask = new Task(
@@ -13,7 +12,7 @@ const firstTask = new Task(
   "project: m"
 );
 const secondTask = new Task("bbb", "bbb", "01-03-17", "prio", "project: 2");
-const thirdTask = new Task("ccc", "ccc", "03-12-21", "prio", "project: d");
+const thirdTask = new Task("ccc", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas atque voluptatibus error ratione, laborum autem ex tempora fugit. Assumenda dicta ratione vero optio fuga! Officia, odit exercitationem. Expedita culpa, nostrum sunt amet accusamus maxime vitae nulla et recusandae aperiam doloremque eius ab velit tempore quae, illum voluptas deleniti. Cum explicabo perferendis possimus dolore hic nisi deserunt impedit nam maiores autem.", "03-12-21", "prio", "project: d");
 
 const defaultProject = new Project("all");
 const firstProject = new Project("project: m");
@@ -35,7 +34,7 @@ render(taskArray);
 createSidebar(projectArray);
 
 //add task
-export function addTask(title, description, dueDate, project) {
+export function addTask(title = "New task", description, dueDate, project = "all") {
   //function that uses task class to add new classes
   const newTask = new Task(title, description, dueDate, project);
   taskArray.push(newTask);
@@ -57,25 +56,13 @@ export function addProject(name) {
 }
 
 //render
-function test(project) {
-    const testing = checkProjectExists(project)
-    console.log('does it exist' + testing)
-}
+
 export function switchToProject() {
   const name = this.textContent;
-  console.log(name);
   render(taskArray, name);
 }
 
-// function checkProjectExists(project) {
-//     projectArray.forEach(Project => {
-//         console.log('a' + Project, 'b' + Project.name, 'c' + project)
-//         if (Project.name === project) {
-//             console.log('fired')
-//             return true
-//         } 
-//       })
-// }
+
 function checkProjectExists(project) {
     let check = 'a';
     projectArray.forEach(Project => {

@@ -76,7 +76,6 @@ export function createContent(array) {
     descriptionSpot.textContent = description;
     dueDateSpot.textContent = dueDate;
 
-    console.log(title, description, dueDate, priority, completed);
   });
 }
 
@@ -113,6 +112,10 @@ export function taskInput() {
     const titleInput = document.createElement('input');
     titleInput.setAttribute('type', "text");
     titleInput.id = "titleInput";
+    const titleLabel = document.createElement('label');
+    titleLabel.setAttribute('for', 'titleInput')
+    titleLabel.innerHTML = "Task Name: "
+
 
     const descriptionInput = document.createElement('input');
     descriptionInput.setAttribute('type', "text");
@@ -125,19 +128,33 @@ export function taskInput() {
     const projectInput = document.createElement('input');
     projectInput.setAttribute('type', "text");
     projectInput.id = "projectInput";
+    const projectLabel = document.createElement('label');
+    projectLabel.setAttribute('for', 'projectInput');
+    projectLabel.innerHTML = "Project: "
+
+
 
     const inputBtn = document.createElement('button');
     inputBtn.id = "inputBtn";
     inputBtn.textContent = 'Add Task';
     inputBtn.addEventListener('click', () => {
-        addTask(titleInput.value, descriptionInput.value, dateInput.value, projectInput.value)
+        if (titleInput.value.length <= 0) return;
+        if (projectInput.value.length <= 0) {
+            projectInput.value = "all";
+        }
+        addTask(titleInput.value, descriptionInput.value, dateInput.value, projectInput.value);
     })
 
     inputDiv.appendChild(taskInputText);
+    inputDiv.appendChild(titleLabel);
     inputDiv.appendChild(titleInput);
-    inputDiv.appendChild(descriptionInput);
+    // inputDiv.appendChild(descriptionInput);
     inputDiv.appendChild(dateInput);
+    inputDiv.appendChild(projectLabel);
     inputDiv.appendChild(projectInput);
     inputDiv.appendChild(inputBtn);
+   
+    
+
 }
 
