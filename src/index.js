@@ -2,6 +2,7 @@ import "./style.css";
 import { Task } from "./task-class";
 import { render, createContent, createSidebar, taskInput } from "./DOM";
 import { Project, addProjectBtn , closePopup} from "./project";
+import { getToday } from "./date";
 
 //test
 const firstTask = new Task(
@@ -36,8 +37,17 @@ createSidebar(projectArray);
 //add task
 export function addTask(title = "New task", description, dueDate, project = "all") {
   //function that uses task class to add new classes
-  const newTask = new Task(title, description, dueDate, project);
+  if (dueDate === "" ) {
+      const today = getToday();
+      console.log(today)
+  const newTask = new Task(title, description, today, project); 
   taskArray.push(newTask);
+  } else {
+      const newTask = new Task(title, description, dueDate, project);
+  taskArray.push(newTask);
+    }
+
+ 
 
   render(taskArray);
   //add new input
