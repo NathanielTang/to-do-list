@@ -2,8 +2,8 @@ import { switchToProject, addTask } from "./index.js";
 
 const content = document.getElementById("content");
 
-export function render(array, project = "all") {
-  if (project === "all") {
+export function render(array, project = "All") {
+  if (project === "All") {
     createContent(array);
   } else {
     const projectArray = [];
@@ -14,6 +14,7 @@ export function render(array, project = "all") {
       createContent(projectArray);
     });
   }
+  taskInput();
 }
 
 //content

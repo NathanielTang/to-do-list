@@ -9,18 +9,16 @@ const firstTask = new Task(
   "Read",
   "Continue reading book from chapter ...",
   "02-22-22",
-  "prio",
   "Reading"
 );
-const secondTask = new Task("Gym", "LEG DAY. Hamstring curls; Bulgarian Split Squats (drop set), Romanian Deadlifts, Leg press, Calf Raises", "06-14-22", "prio", "Health");
+const secondTask = new Task("Gym", "LEG DAY. Hamstring curls; Bulgarian Split Squats (drop set), Romanian Deadlifts, Leg press, Calf Raises", "06-14-22", "Health");
 const thirdTask = new Task(
   "Meditate",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas atque voluptatibus error ratione, laborum autem ex tempora fugit. Assumenda dicta ratione vero optio fuga! Officia, odit exercitationem. Expedita culpa, nostrum sunt amet accusamus maxime vitae nulla et recusandae aperiam doloremque eius ab velit tempore quae, illum voluptas deleniti. Cum explicabo perferendis possimus dolore hic nisi deserunt impedit nam maiores autem.",
   "06-14-22",
-  "prio",
   "Health"
 );
-
+console.log(secondTask.project, firstTask.project, thirdTask.project)
 const defaultProject = new Project("All");
 const firstProject = new Project("Reading");
 const secondProject = new Project("Health");
@@ -45,9 +43,8 @@ export function addTask(
   title = "New task",
   description,
   dueDate,
-  project = "all"
+  project = "All"
 ) {
-  //function that uses task class to add new classes
   if (dueDate === "") {
     const today = getToday();
     console.log(today);
@@ -59,8 +56,8 @@ export function addTask(
   }
 
   render(taskArray);
-  //add new input
-  taskInput();
+  
+ 
 
   checkProjectExists(project);
 }
@@ -93,5 +90,3 @@ function checkProjectExists(project) {
     addProject(project);
   }
 }
-
-taskInput();
