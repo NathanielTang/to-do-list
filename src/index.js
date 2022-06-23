@@ -30,6 +30,7 @@ firstTask.markComplete();
 
 const taskArray = [];
 const projectArray = [];
+let currentProject = "All";
 
 taskArray.push(firstTask, secondTask, thirdTask);
 projectArray.push(defaultProject);
@@ -75,6 +76,8 @@ export function addProject(name) {
 export function switchToProject() {
   const name = this.textContent;
   render(taskArray, name);
+  //change project to the clicked project
+  currentProject = ""
 }
 
 function checkProjectExists(project) {
